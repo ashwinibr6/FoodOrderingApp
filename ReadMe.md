@@ -32,10 +32,14 @@ Then I expect to see its quantity update on the foodcart
    When I add an item that's on discuount
    Then I expect to see it highlighted
    Then I expect to reflect changes on the final bill amount
+   
+------------------------------------------------------------------
 6) As a customer, I want to see the extra 10 % discount items ordered between 9:00 PM to 6:00 AM (Apllicable to all items)
    Given I have a foodcart with items that are not on discuount
    When I add an item that's on discuount
    Then I expect to reflect changes on the final bill amount
+   
+----------------------------------------------------
 7) As a customer, I want to get free food for my cart if my order completion takes more then 3 minutes (3 minutes = Customer order completes - customer gave new order)
    Given I have an empty foodcart
    When I add items
