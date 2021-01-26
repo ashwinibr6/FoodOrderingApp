@@ -17,10 +17,16 @@ Then I expect the subtotal to reflect the sum of all the items in my foodcart
 Given I have foodcart with one item
 When I add more of that item
 Then I expect to see its quantity update on the foodcart
+
+
+---------------------------------------------------------------------
 4) As a customer, I want to see what's in my foodcart
    Given I have an empty foodcart
    When I add items
    Then I expect it to see an itemized list of the items along with their price and quantity
+   
+--------------------------------------------------------------
+
 5) As a customer, I want to see the on discount items highlighted in my foodcart
    Given I have a foodcart with items that are not on discuount
    When I add an item that's on discuount

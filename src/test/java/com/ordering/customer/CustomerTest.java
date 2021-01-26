@@ -4,6 +4,8 @@ import com.ordering.customer.Customer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -39,4 +41,24 @@ public class CustomerTest {
         assertEquals(30.99, actualPrice,0.1);
 
     }
+
+    @Test
+    public void addingItem_updatesQuantity(){
+        customer.addItem(item1);
+        customer.addItem(item1);
+        assertEquals(2, customer.getCartItems().get(item1));
+
+    }
+
+    @Test
+    public void itemizedListOfFood(){
+        customer.addItem(item1);
+        customer.addItem(item1);
+        customer.addItem(item2);
+
+        List<String> expectedList = List.of("Name:Burger Price:10.99 Quantity:2", "Name:Deep dish Pizza Price:20.0 Quantity:1");
+
+        assertEquals(expectedList, customer.getItemizedList());
+    }
+
 }
